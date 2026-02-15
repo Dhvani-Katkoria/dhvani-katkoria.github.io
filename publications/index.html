@@ -21,7 +21,7 @@ background: '/img/bg-post.jpg'
     {% else %}
     {{ site.author }}
     {% endif %} -->
-    {{ publication.date | date: '%B %d, %Y' }} &middot; {% include content=publication.content %}
+    {{ publication.date | date: '%B %d, %Y' }} &middot; {{publication.content }}
   </p>
 </article>
 

@@ -12,11 +12,15 @@ layout: default
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>{{ site.title }}</h1>
-            {% if site.description %}
-            <span class="subheading">{{ site.description }}</span>
+          <div class="post-heading">
+            <h1>{{ page.title }}</h1>
+            {% if page.subtitle %}
+            <h2 class="subheading">{{ page.subtitle }}</h2>
             {% endif %}
+            <span class="meta">Authors :
+              <a href="#">{% if page.author %}{{ Katkoria, D. and Sreevalsan-Nair, J. }}{% else %}{{ site.author }}{% endif %}</a>
+              on {{ page.date | date: '%B %d, %Y' }} {% content=page.content %}
+            </span>
           </div>
         </div>
       </div>
@@ -29,36 +33,19 @@ layout: default
 
         {{ content }}
 
-        <!-- Home Publication List -->
-        {% for publication in site.publications limit : 5 %}
-
-        <article class="publication-preview">
-          <a href="{{ publication.url | prepend: site.baseurl | replace: '//', '/' }}">
-            <h2 class="publication-title">{{ publication.title }}</h2>
-            {% if publication.subtitle %}
-            <h3 class="publication-subtitle">{{ publication.subtitle }}</h3>
-            {% else %}
-            <h3 class="publication-subtitle">{{ publication.excerpt | strip_html | truncatewords: 15 }}</h3>
-            {% endif %}
-          </a>
-          <p class="publication-meta">Posted by
-            {% if publication.author %}
-            {{ publication.author }}
-            {% else %}
-            {{ site.author }}
-            {% endif %}
-            on
-            {{ publication.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=publication.content %}            
-          </p>
-        </article>
-
         <hr>
 
-        {% endfor %}
-
-        <!-- Pager -->
         <div class="clearfix">
-          <a class="btn btn-primary float-right" href="{{"/publications" | relative_url }}">View All Publications &rarr;</a>
+
+          {% if page.previous.url %}
+          <a class="btn btn-primary float-left" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          {% endif %}
+          {% if page.next.url %}
+          <a class="btn btn-primary float-right" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          {% endif %}
+
         </div>
 
       </div>

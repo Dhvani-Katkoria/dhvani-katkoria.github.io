@@ -7,7 +7,7 @@ background: '/img/bg-post.jpg'
 {% for publication in site.publications %}
 
 <article class="post-preview">
-  <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+  <a href="{{ publication.url | prepend: site.baseurl | replace: '//', '/' }}">
     <h2 class="post-title">{{ publication.title }}</h2>
     {% if publication.subtitle %}
     <h3 class="post-subtitle">{{ publication.subtitle }}</h3>

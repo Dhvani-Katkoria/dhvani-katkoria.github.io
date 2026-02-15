@@ -16,6 +16,11 @@ linkedin_username:
 # Add your google-analytics ID here to activate google analytics
 google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
 
+collections:
+  publications:
+    output: true
+    permalink: /publications/:path/
+    
 # Build settings
 markdown:           kramdown
 paginate:           5

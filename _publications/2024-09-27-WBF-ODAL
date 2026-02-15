@@ -1,0 +1,18 @@
+---
+layout: publication
+title: "WBF-ODAL: Weighted Boxes Fusion for 3D Object Detection from Automotive LiDAR Point Clouds (Best Paper Award)"
+subtitle: 2024 International Conference on Vehicular Technology and Transportation Systems (ICVTTS) 
+date: 2024-09-27 
+background: '/img/posts/01.jpg'
+author: Dhvani Katkoria, Jaya Sreevalsan-Nair, Mayank Sati & Sunil Karunakaran 
+---
+
+<p>The use of Convolutional Neural Networks (CNNs) is the state-of-the-art for 3D object detection from automotive/vehicle LiDAR point clouds. 
+However, not all models perform uniformly well across all classes. 
+Hence, ensemble-based solutions are used where a mixture of experts (ME) approach has shown some promise. 
+There is limited work on using the weighting function in this context, even though it is widely used in various other problem statements in computer vision. 
+We propose the use of Weighted Boxes Fusion (WBF) for Object Detection from Automotive LiDAR point clouds (ODAL). 
+We refer to our novel end-to-end workflow as WBF-ODAL. 
+Our experiments on the nuScenes datasets using two different ensembles demonstrate that WBF-ODAL outperforms ME-ODAL for most classes.
+
+<p>Paper: <a href="https://ieeexplore.ieee.org/document/10763933">Here</a>.</p>

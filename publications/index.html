@@ -6,8 +6,8 @@ background: '/img/bg-post.jpg'
 
 {% for publications in paginator.publications %}
 
-<article class="post-preview">
-  <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+<article class="publication-preview">
+  <a href="{{ publication.url | prepend: site.baseurl | replace: '//', '/' }}">
     <h2 class="publications-title">{{ publications.title }}</h2>
     {% if publications.subtitle %}
     <h3 class="publications-subtitle">{{ publications.subtitle }}</h3>

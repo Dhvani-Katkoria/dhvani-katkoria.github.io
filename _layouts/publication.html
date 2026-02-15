@@ -29,8 +29,8 @@ layout: default
 
         {{ content }}
 
-        <!-- Home Post List -->
-        {% for post in site.posts limit : 5 %}
+        <!-- Home Publication List -->
+        {% for publication in site.publications limit : 5 %}
 
         <article class="publication-preview">
           <a href="{{ publication.url | prepend: site.baseurl | replace: '//', '/' }}">

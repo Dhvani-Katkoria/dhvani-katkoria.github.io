@@ -18,8 +18,8 @@ layout: default
             <h2 class="subheading">{{ page.subtitle }}</h2>
             {% endif %}
             <span class="meta">Authors :
-              <a href="#">{% if page.author %}{{ Katkoria, D. and Sreevalsan-Nair, J. }}{% else %}{{ site.author }}{% endif %}</a>
-              on {{ page.date | date: '%B %d, %Y' }} {% include content=page.content %}
+              <a href="#">{% if page.author %} Katkoria, D. and Sreevalsan-Nair, J. {% else %}{{ site.author }}{% endif %}</a>
+              Published on {{ page.date | date: '%B %d, %Y' }} {% include content=page.content %}
             </span>
           </div>
         </div>

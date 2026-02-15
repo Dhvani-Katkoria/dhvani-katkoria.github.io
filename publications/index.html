@@ -4,7 +4,7 @@ title: Publications
 background: '/img/bg-post.jpg'
 ---
 
-{% assign sorted_pubs = site.publications | sort: 'title' %}
+{% assign sorted_pubs = site.publications | sort: 'date' %}
 {% for publication in sorted_pubs %}
 
 <article class="post-preview">

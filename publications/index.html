@@ -1,0 +1,48 @@
+---
+layout: page
+title: Publications
+background: '/img/bg-post.jpg'
+---
+
+{% for publications in paginator.publications %}
+
+<article class="post-preview">
+  <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+    <h2 class="publications-title">{{ publications.title }}</h2>
+    {% if publications.subtitle %}
+    <h3 class="publications-subtitle">{{ publications.subtitle }}</h3>
+    {% else %}
+    <h3 class="publications-subtitle">{{ publications.excerpt | strip_html | truncatewords: 15 }}</h3>
+    {% endif %}
+  </a>
+  <p class="publications-meta">Posted by
+    {% if publications.author %}
+    {{ publications.author }}
+    {% else %}
+    {{ site.author }}
+    {% endif %}
+    on {{ publications.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=publications.content %}
+  </p>
+</article>
+
+<hr>
+
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+
+<div class="clearfix">
+
+  {% if paginator.previous_page %}
+  <a class="btn btn-primary float-left" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr;
+    Newer<span class="d-none d-md-inline"> Publications</span></a>
+  {% endif %}
+
+  {% if paginator.next_page %}
+  <a class="btn btn-primary float-right" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older<span class="d-none d-md-inline"> Publications</span> &rarr;</a>
+  {% endif %}
+
+</div>
+
+{% endif %}

@@ -4,7 +4,7 @@ title: Publications
 background: '/img/bg-post.jpg'
 ---
 
-{% for publication in paginator.publications %}
+{% for publication in site.publications %}
 
 <article class="publication-preview">
   <a href="{{ publication.url | prepend: site.baseurl | replace: '//', '/' }}">

@@ -19,7 +19,7 @@ layout: default
             {% endif %}
             <span class="meta">Authors :
               <a href="#">{% if page.author %}{{ Katkoria, D. and Sreevalsan-Nair, J. }}{% else %}{{ site.author }}{% endif %}</a>
-              on {{ page.date | date: '%B %d, %Y' }} {% content=page.content %}
+              on {{ page.date | date: '%B %d, %Y' }} {% include content=page.content %}
             </span>
           </div>
         </div>
